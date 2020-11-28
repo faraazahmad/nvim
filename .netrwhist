@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/faraaz/oss/tispc/src/tispc_lexer'
+let g:netrw_dirhist_9='/home/faraaz/oss/tispc/src'
+let g:netrw_dirhist_8='/home/faraaz/oss/tispc'
+let g:netrw_dirhist_7='/home/faraaz/oss/tispc/src/codegen'
+let g:netrw_dirhist_6='/home/faraaz/oss/tispc/src'
+let g:netrw_dirhist_5='/home/faraaz/oss/tispc'
+let g:netrw_dirhist_4='/home/faraaz/oss/tispc/src/codegen'
+let g:netrw_dirhist_3='/home/faraaz/oss/tispc/src'
+let g:netrw_dirhist_2='/home/faraaz/oss/tispc/src/tispc_lexer'
+let g:netrw_dirhist_1='/home/faraaz/oss/tispc/src'
