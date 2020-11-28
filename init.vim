@@ -23,7 +23,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -31,6 +30,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ajmwagar/vim-deus'
 
 " Languages
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -53,5 +53,6 @@ let g:fzf_preview_window = 'right:50%'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 
 colorscheme deus
+set termguicolors
 
 let g:rustfmt_autosave = 1
