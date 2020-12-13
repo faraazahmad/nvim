@@ -25,18 +25,19 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'sheerun/vim-polyglot'
 
 " Themes
 Plug 'ajmwagar/vim-deus'
 Plug 'lifepillar/vim-wwdc16-theme'
 Plug 'glepnir/oceanic-material'
 Plug 'fneu/breezy'
-Plug 'adrian5/oceanic-next-vim'
+Plug 'joshdick/onedark.vim'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'whatyouhide/vim-gotham'
 Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'lifepillar/vim-solarized8'
 
 " Languages
 Plug 'rust-lang/rust.vim'
@@ -44,9 +45,11 @@ Plug 'rust-lang/rust.vim'
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1        " enable tab-line
-let g:airline_powerline_fonts = 1
-let g:airline_theme='gruvbox'                          " set airline theme
+let g:airline_powerline_fonts = 1                   " enable powerline fonts
 let g:airline#extensions#branch#enabled = 1         " show git branch
+
+let g:fzf_preview_window = 'right:50%'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -57,18 +60,17 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:fzf_preview_window = 'right:50%'
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
-
 set background=dark
 set termguicolors
+colorscheme solarized8
+let g:airline_theme='gotham'                       " set airline theme
 
 " -- Config for sonokai theme --
 " let g:sonokai_style = 'atlantis'
 " let g:sonokai_enable_italic = 1
 
 " -- Config for Gruvbox theme --
-let g:gruvbox_italic=1
-colorscheme gruvbox
+" let g:gruvbox_italic=1
 
 let g:rustfmt_autosave = 1
+
