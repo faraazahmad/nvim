@@ -24,10 +24,14 @@ call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('tpope/vim-fugitive')
+call minpac#add('neoclide/coc.nvim', { 'branch': 'release' })
+call minpac#add('junegunn/fzf')
+call minpac#add('junegunn/fzf.vim')
 " -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - Themes -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
 call minpac#add('morhetz/gruvbox')
 " -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  Languages -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
 call minpac#add('rust-lang/rust.vim')
+call minpac#add('elixir-editors/vim-elixir')
 " -----------------------------------------------------------------------------------------------------------
 
 " ------------------------------------------ Theme related settings -----------------------------------------
