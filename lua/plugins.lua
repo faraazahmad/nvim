@@ -21,10 +21,16 @@ return require('packer').startup(function(use)
 	-- packer can manager itself
 	use { 'wbthomason/packer.nvim' }
 
+	-- statusline/bufferline
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
+
 	-- fzf with preview window
 	use {'junegunn/fzf', run = fn['fzf#install']}
 	use {'junegunn/fzf.vim'}
-	
+
 	-- treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
