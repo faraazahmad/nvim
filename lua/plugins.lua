@@ -27,9 +27,14 @@ return require('packer').startup(function(use)
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 
-	-- fzf with preview window
-	use {'junegunn/fzf', run = fn['fzf#install']}
-	use {'junegunn/fzf.vim'}
+	-- telescope for all things awesome
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {
+			{ 'nvim-lua/plenary.nvim' },
+			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+		}
+	}
 
 	-- treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
