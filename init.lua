@@ -27,15 +27,15 @@ g['coc_global_extensions'] = {
 cmd [[syntax on]]
 cmd [[set t_Co=256]]
 cmd [[set cursorline]]
-cmd [[colorscheme onedark]]
+cmd [[colorscheme gruvbox]]
 
 -- statusline/bufferline
 require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
   },
@@ -61,3 +61,9 @@ require('lualine').setup {
   },
   extensions = {}
 }
+
+-- gitsigns
+require('gitsigns').setup()
+
+-- telescope coc
+require('telescope').load_extension('coc')

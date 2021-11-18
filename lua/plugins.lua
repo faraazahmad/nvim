@@ -36,6 +36,21 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	-- telescope extensions
+	use { 'fannheyward/telescope-coc.nvim' }
+
+	-- Git stuff
+	-- Fugitive
+	use { 'tpope/vim-fugitive' }
+
+	-- gitsigns in the gutter
+	use {
+  		'lewis6991/gitsigns.nvim',
+  		requires = {
+    		'nvim-lua/plenary.nvim'
+  		},
+	}
+
 	-- treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
@@ -44,6 +59,7 @@ return require('packer').startup(function(use)
 
 	-- themes
 	use { 'joshdick/onedark.vim' }
+	use { 'morhetz/gruvbox' }
 
 	if packer_bootstrap then
 		require('packer').sync()
