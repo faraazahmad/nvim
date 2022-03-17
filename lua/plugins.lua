@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
 	}
 
 	-- telescope extensions
-	use { 'fannheyward/telescope-coc.nvim' }
+	-- use { 'fannheyward/telescope-coc.nvim' }
 
 	-- Git stuff
 	-- Fugitive
@@ -55,11 +55,12 @@ return require('packer').startup(function(use)
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
 	-- coc intellisense
-	use {'neoclide/coc.nvim', branch = 'release'}
+	-- use {'neoclide/coc.nvim', branch = 'release'}
 
 	-- themes
 	use { 'joshdick/onedark.vim' }
 	use { 'morhetz/gruvbox' }
+	use { 'Everblush/everblush.vim' }
 
 	if packer_bootstrap then
 		require('packer').sync()
