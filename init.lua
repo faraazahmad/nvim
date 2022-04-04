@@ -7,6 +7,7 @@ require('keymaps')
 
 -- set editor options
 opt.termguicolors = true
+opt.number = true
 opt.relativenumber = true
 opt.smartindent = true
 opt.tabstop = 4
