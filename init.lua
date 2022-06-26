@@ -29,7 +29,7 @@ ts.setup { ensure_installed = 'maintained', highlight = { enable = true }}
 cmd [[syntax on]]
 cmd [[set t_Co=256]]
 cmd [[set cursorline]]
-cmd [[colorscheme everblush]]
+cmd [[colorscheme gruvbox]]
 
 -- statusline/bufferline
 require('lualine').setup {
