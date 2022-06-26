@@ -42,6 +42,8 @@ return require('packer').startup(function(use)
 	-- Git stuff
 	-- Fugitive
 	use { 'tpope/vim-fugitive' }
+	-- Lazygit
+	use { 'kdheepak/lazygit.nvim' }
 
 	-- gitsigns in the gutter
 	use {

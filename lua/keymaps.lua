@@ -7,4 +7,4 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map("n", "<C-p>", ":Telescope builtin<CR>")
+map("n", "<C-p>", ":Telescope find_files<CR>")
