@@ -15,14 +15,6 @@ opt.smartindent = true
 opt.tabstop = 4
 opt.shiftwidth = 4
 
--- coc extension names to install when not installed
--- g['coc_global_extensions'] = {
---	'coc-lua',
---	'coc-rust-analyzer',
---	'coc-json',
---	'coc-tsserver'
---}
-
 -- personalisation
 cmd [[syntax on]]
 cmd [[set t_Co=256]]

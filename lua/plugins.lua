@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
 	-- coc intellisense
-	-- use {'neoclide/coc.nvim', branch = 'release'}
+	use {'neoclide/coc.nvim', branch = 'release'}
 
 	-- themes
 	use { 'joshdick/onedark.vim' }
