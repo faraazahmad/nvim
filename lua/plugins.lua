@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
 	}
 
 	-- telescope extensions
-	-- use { 'fannheyward/telescope-coc.nvim' }
+	use { 'fannheyward/telescope-coc.nvim' }
 
 	-- Git stuff
 	-- Fugitive
