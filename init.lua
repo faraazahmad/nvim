@@ -2,6 +2,8 @@ local cmd = vim.cmd
 local opt = vim.opt
 local g = vim.g
 
+g.mapleader = ' '
+
 require('plugins')
 require('keymaps')
 

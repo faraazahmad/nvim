@@ -7,5 +7,6 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map("n", "<C-b>", ":Telescope find_files<CR>")
-map("n", "<C-p>", ":Telescope <CR>")
+map("n", "<leader><leader>", ":Telescope <CR>")
+map("n", "<leader>f", ":Telescope find_files<CR>")
+map("n", "<leader>g", ":LazyGit<CR>")
