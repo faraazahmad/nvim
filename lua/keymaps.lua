@@ -8,5 +8,7 @@ function map(mode, lhs, rhs, opts)
 end
 
 map("n", "<leader><leader>", ":Telescope <CR>")
-map("n", "<leader>f", ":Telescope find_files<CR>")
+map("n", "<leader>b", ":Telescope find_files<CR>")
 map("n", "<leader>g", ":LazyGit<CR>")
+map("n", "<leader>p", ":Telescope commands<CR>")
+map("n", "<leader>f", ":Telescope live_grep<CR>")
