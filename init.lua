@@ -27,4 +27,4 @@ cmd [[colorscheme gruvbox]]
 require('gitsigns').setup()
 
 -- telescope coc
---require('telescope').load_extension('coc')
+require('telescope').load_extension('coc')
