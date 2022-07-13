@@ -7,10 +7,13 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- Telescope bindings
 map("n", "<leader><leader>", ":Telescope <CR>")
 map("n", "<leader>b", ":Telescope find_files<CR>")
-map("n", "<leader>g", ":LazyGit<CR>")
 map("n", "<leader>p", ":Telescope commands<CR>")
 map("n", "<leader>f", ":Telescope live_grep<CR>")
--- map("n", "nnoremap <silent> K", ":call ShowDocumentation()<CR>")
 map("n", "<leader>h", ":Telescope help_tags<CR>")
+
+
+map("n", "<leader>g", ":LazyGit<CR>")
+map("n", "<leader>gd", "<plug>(coc-definition)<CR>")
