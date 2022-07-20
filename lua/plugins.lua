@@ -60,7 +60,7 @@ return require('packer').startup(function(use)
 	use {'neoclide/coc.nvim', branch = 'release'}
 
 	-- themes
-	use { 'joshdick/onedark.vim' }
+	use { 'dracula/vim', as = 'dracula' }
 	use { 'morhetz/gruvbox' }
 	use { 'Everblush/everblush.vim' }
 

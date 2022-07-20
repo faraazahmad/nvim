@@ -19,7 +19,7 @@ opt.shiftwidth = 4
 cmd [[syntax on]]
 cmd [[set t_Co=256]]
 cmd [[set cursorline]]
-cmd [[colorscheme gruvbox]]
+cmd [[colorscheme dracula]]
 
 -- statusline/bufferline
 
