@@ -3,6 +3,7 @@ local opt = vim.opt
 local g = vim.g
 
 g.mapleader = ' '
+g.gruvbox_contrast_dark = 'hard'
 
 require('plugins')
 require('keymaps')

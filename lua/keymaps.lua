@@ -9,7 +9,11 @@ end
 
 -- Telescope bindings
 map("n", "<leader><leader>", ":Telescope <CR>")
-map("n", "<leader>b", ":Telescope find_files<CR>")
+
+-- file management
+map("n", "<leader>bf", ":Telescope find_files<CR>")
+map("n", "<leader>bt", ":NERDTreeToggle<CR>")
+
 map("n", "<leader>p", ":Telescope commands<CR>")
 map("n", "<leader>f", ":Telescope live_grep<CR>")
 map("n", "<leader>h", ":Telescope help_tags<CR>")
