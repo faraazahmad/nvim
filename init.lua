@@ -4,6 +4,7 @@ local g = vim.g
 
 g.mapleader = ' '
 g.gruvbox_contrast_dark = 'hard'
+g.blamer_enabled = true
 
 require('plugins')
 require('keymaps')
@@ -21,7 +22,7 @@ cmd [[syntax on]]
 cmd [[set t_Co=256]]
 cmd [[set cursorline]]
 cmd [[colorscheme gruvbox]]
-
+cmd [[set noswapfile]]
 -- statusline/bufferline
 
 -- gitsigns

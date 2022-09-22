@@ -53,7 +53,8 @@ return require('packer').startup(function(use)
 	use { 'tpope/vim-fugitive' }
 	-- Lazygit
 	use { 'kdheepak/lazygit.nvim' }
-
+	-- Git blame on the current line
+	use { 'APZelos/blamer.nvim' }
 	-- gitsigns in the gutter
 	use {
   		'lewis6991/gitsigns.nvim',

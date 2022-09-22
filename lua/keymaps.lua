@@ -18,6 +18,6 @@ map("n", "<leader>p", ":Telescope commands<CR>")
 map("n", "<leader>f", ":Telescope live_grep<CR>")
 map("n", "<leader>h", ":Telescope help_tags<CR>")
 
-
 map("n", "<leader>g", ":LazyGit<CR>")
-map("n", "<leader>gd", "<plug>(coc-definition)<CR>")
+
+map("n", "<leader>k", ":call CocActionAsync('jumpDefinition')<CR>")
