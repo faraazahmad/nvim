@@ -70,9 +70,9 @@ return require('packer').startup(function(use)
 	use {'neoclide/coc.nvim', branch = 'release'}
 
 	-- themes
-	use { 'joshdick/onedark.vim' }
 	use { 'morhetz/gruvbox' }
-	use { 'Everblush/everblush.vim' }
+	use { 'sainnhe/everforest' }
+	use { 'vv9k/bogster' }
 
 	if packer_bootstrap then
 		require('packer').sync()

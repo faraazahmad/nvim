@@ -7,6 +7,8 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- Search bindings
+map("n", "<Esc>", ":noh<CR>")
 -- Telescope bindings
 map("n", "<leader><leader>", ":Telescope <CR>")
 
