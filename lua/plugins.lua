@@ -21,6 +21,10 @@ return require('packer').startup(function(use)
 	-- packer can manager itself
 	use { 'wbthomason/packer.nvim' }
 
+	-- NERDTree and devicons
+	use { 'preservim/nerdtree' }
+	use { 'ryanoasis/vim-devicons' }
+
 	-- statusline/bufferline
 	use {
 		'nvim-lualine/lualine.nvim',
@@ -32,8 +36,13 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		requires = {
 			{ 'nvim-lua/plenary.nvim' },
-			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-		}
+			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    		{ "nvim-telescope/telescope-live-grep-args.nvim" }
+		},
+
+		config = function()
+    		require("telescope").load_extension("live_grep_args")
+  		end
 	}
 
 	-- telescope extensions
@@ -44,7 +53,8 @@ return require('packer').startup(function(use)
 	use { 'tpope/vim-fugitive' }
 	-- Lazygit
 	use { 'kdheepak/lazygit.nvim' }
-
+	-- Git blame on the current line
+	use { 'APZelos/blamer.nvim' }
 	-- gitsigns in the gutter
 	use {
   		'lewis6991/gitsigns.nvim',
@@ -60,9 +70,9 @@ return require('packer').startup(function(use)
 	use {'neoclide/coc.nvim', branch = 'release'}
 
 	-- themes
-	use { 'dracula/vim', as = 'dracula' }
 	use { 'morhetz/gruvbox' }
-	use { 'Everblush/everblush.vim' }
+	use { 'sainnhe/everforest' }
+	use { 'vv9k/bogster' }
 
 	if packer_bootstrap then
 		require('packer').sync()

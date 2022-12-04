@@ -2,5 +2,7 @@
 	"zig.enabled": true,
 	"zig.startUpMessage": true,
 	"zig.path": "~/zls/zls",
-	"zig.debugLog": false
+	"zig.debugLog": false,
+	"coc.preferences.formatOnSaveFiletypes":  ["*"],
+	"solargraph.formatting": true
 }
