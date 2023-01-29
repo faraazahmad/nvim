@@ -21,5 +21,3 @@ map("n", "<leader>f", ":Telescope live_grep<CR>")
 map("n", "<leader>h", ":Telescope help_tags<CR>")
 
 map("n", "<leader>g", ":LazyGit<CR>")
-
-map("n", "<leader>k", ":call CocActionAsync('jumpDefinition')<CR>")
