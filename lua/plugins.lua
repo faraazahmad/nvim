@@ -1,15 +1,19 @@
-local fn = vim.fn
-local cmd = vim.cmd
-local packer_bootstrap
-
 -- install packer if not present
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
+local packer_bootstrap = ensure_packer()
+
 -- autorun PackerCompile when this file is modified
-cmd([[
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
@@ -47,9 +51,6 @@ return require('packer').startup(function(use)
   		end
 	}
 
-	-- telescope extensions
-	use { 'fannheyward/telescope-coc.nvim' }
-
 	-- Git stuff
 	-- Fugitive
 	use { 'tpope/vim-fugitive' }
@@ -68,32 +69,31 @@ return require('packer').startup(function(use)
 	-- treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-	-- coc intellisense
-	-- use {'neoclide/coc.nvim', branch = 'release'}
-
 	-- nvim lsp stuff
 	use {
-  'VonHeikemen/lsp-zero.nvim',
-  branch = 'v1.x',
-  requires = {
-    -- LSP Support
-    {'neovim/nvim-lspconfig'},             -- Required
-    {'williamboman/mason.nvim'},           -- Optional
-    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+  		'VonHeikemen/lsp-zero.nvim',
+  		branch = 'v3.x',
+  		requires = {
+    
+    		{'williamboman/mason.nvim'},           
+    		{'williamboman/mason-lspconfig.nvim'},
 
-    -- Autocompletion
-    {'hrsh7th/nvim-cmp'},         -- Required
-    {'hrsh7th/cmp-nvim-lsp'},     -- Required
-    {'hrsh7th/cmp-buffer'},       -- Optional
-    {'hrsh7th/cmp-path'},         -- Optional
-    {'saadparwaiz1/cmp_luasnip'}, -- Optional
-    {'hrsh7th/cmp-nvim-lua'},     -- Optional
+			-- LSP Support
+    		{'neovim/nvim-lspconfig'},    -- Required
 
-    -- Snippets
-    {'L3MON4D3/LuaSnip'},             -- Required
-    {'rafamadriz/friendly-snippets'}, -- Optional
-  }
-}
+    		-- Autocompletion
+	    	{'hrsh7th/nvim-cmp'},         -- Required
+    		{'hrsh7th/cmp-nvim-lsp'},     -- Required
+	    	{'hrsh7th/cmp-buffer'},       -- Optional
+			{'hrsh7th/cmp-path'},         -- Optional
+		    {'saadparwaiz1/cmp_luasnip'}, -- Optional
+		    {'hrsh7th/cmp-nvim-lua'},     -- Optional
+
+    		-- Snippets
+			{'L3MON4D3/LuaSnip'},             -- Required
+    		{'rafamadriz/friendly-snippets'}, -- Optional
+  		}
+	}
 
 	-- themes
 	use { 'morhetz/gruvbox' }
