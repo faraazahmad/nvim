@@ -1,9 +1,9 @@
 -- install packer if not present
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-	fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
+	fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+	vim.cmd [[packadd packer.nvim]]
 end
 
 -- autorun PackerCompile when this file is modified
@@ -18,6 +18,14 @@ vim.cmd([[
 return require('packer').startup(function(use)
 	-- packer can manager itself
 	use { 'wbthomason/packer.nvim' }
+
+	-- plugin for commenting
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
+	}
 
 	-- NERDTree and devicons
 	use { 'preservim/nerdtree' }
@@ -36,13 +44,13 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		requires = {
 			{ 'nvim-lua/plenary.nvim' },
-			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-    		{ "nvim-telescope/telescope-live-grep-args.nvim" }
+			{ 'nvim-telescope/telescope-fzf-native.nvim',    run = 'make' },
+			{ "nvim-telescope/telescope-live-grep-args.nvim" }
 		},
 
 		config = function()
-    		require("telescope").load_extension("live_grep_args")
-  		end
+			require("telescope").load_extension("live_grep_args")
+		end
 	}
 
 	-- Git stuff
@@ -54,10 +62,10 @@ return require('packer').startup(function(use)
 	use { 'APZelos/blamer.nvim' }
 	-- gitsigns in the gutter
 	use {
-  		'lewis6991/gitsigns.nvim',
-  		requires = {
-    		'nvim-lua/plenary.nvim'
-  		},
+		'lewis6991/gitsigns.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim'
+		},
 	}
 
 	-- treesitter
@@ -65,11 +73,11 @@ return require('packer').startup(function(use)
 
 	-- nvim lsp stuff
 	-- Mason LSP manager
-	use {'williamboman/mason.nvim'} 
-	use {'williamboman/mason-lspconfig.nvim'} 
+	use { 'williamboman/mason.nvim' }
+	use { 'williamboman/mason-lspconfig.nvim' }
 	use {
-  		'VonHeikemen/lsp-zero.nvim',
-  		branch = 'v3.x',
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v3.x',
 		lazy = true,
 		config = false
 	}
@@ -82,7 +90,7 @@ return require('packer').startup(function(use)
 	use {
 		'hrsh7th/nvim-cmp',
 		requires = {
-			'L3MON4D3/LuaSnip'	
+			'L3MON4D3/LuaSnip'
 		}
 	}
 
