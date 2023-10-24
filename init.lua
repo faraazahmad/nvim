@@ -4,8 +4,6 @@ local g = vim.g
 
 g.mapleader = ' '
 g.blamer_enabled = true
--- g.everforest_background = 'hard'
--- g.everforest_better_performance = true
 
 -- set editor options
 opt.termguicolors = true
@@ -31,7 +29,7 @@ cmd [[filetype indent on]]
 cmd [[set mouse=a]]
 cmd [[filetype plugin on]]
 cmd [[set cursorline]]
-cmd [[colorscheme gruvbox]]
+cmd [[colorscheme kanagawa]]
 cmd [[set noswapfile]]
 
 require('plugins')
