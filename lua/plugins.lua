@@ -1,15 +1,13 @@
-local fn = vim.fn
-local cmd = vim.cmd
-local packer_bootstrap
-
 -- install packer if not present
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local fn = vim.fn
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+	fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+	vim.cmd [[packadd packer.nvim]]
 end
 
 -- autorun PackerCompile when this file is modified
-cmd([[
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
@@ -20,6 +18,14 @@ cmd([[
 return require('packer').startup(function(use)
 	-- packer can manager itself
 	use { 'wbthomason/packer.nvim' }
+
+	-- plugin for commenting
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
+	}
 
 	-- NERDTree and devicons
 	use { 'preservim/nerdtree' }
@@ -38,17 +44,14 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		requires = {
 			{ 'nvim-lua/plenary.nvim' },
-			{ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-    		{ "nvim-telescope/telescope-live-grep-args.nvim" }
+			{ 'nvim-telescope/telescope-fzf-native.nvim',    run = 'make' },
+			{ "nvim-telescope/telescope-live-grep-args.nvim" }
 		},
 
 		config = function()
-    		require("telescope").load_extension("live_grep_args")
-  		end
+			require("telescope").load_extension("live_grep_args")
+		end
 	}
-
-	-- telescope extensions
-	use { 'fannheyward/telescope-coc.nvim' }
 
 	-- Git stuff
 	-- Fugitive
@@ -59,41 +62,37 @@ return require('packer').startup(function(use)
 	use { 'APZelos/blamer.nvim' }
 	-- gitsigns in the gutter
 	use {
-  		'lewis6991/gitsigns.nvim',
-  		requires = {
-    		'nvim-lua/plenary.nvim'
-  		},
+		'lewis6991/gitsigns.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim'
+		},
 	}
 
 	-- treesitter
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
-	-- coc intellisense
-	-- use {'neoclide/coc.nvim', branch = 'release'}
+	use { 'nvim-treesitter/nvim-treesitter' }
 
 	-- nvim lsp stuff
+	-- Mason LSP manager
+	use { 'williamboman/mason.nvim' }
+	use { 'williamboman/mason-lspconfig.nvim' }
 	use {
-  'VonHeikemen/lsp-zero.nvim',
-  branch = 'v1.x',
-  requires = {
-    -- LSP Support
-    {'neovim/nvim-lspconfig'},             -- Required
-    {'williamboman/mason.nvim'},           -- Optional
-    {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-    -- Autocompletion
-    {'hrsh7th/nvim-cmp'},         -- Required
-    {'hrsh7th/cmp-nvim-lsp'},     -- Required
-    {'hrsh7th/cmp-buffer'},       -- Optional
-    {'hrsh7th/cmp-path'},         -- Optional
-    {'saadparwaiz1/cmp_luasnip'}, -- Optional
-    {'hrsh7th/cmp-nvim-lua'},     -- Optional
-
-    -- Snippets
-    {'L3MON4D3/LuaSnip'},             -- Required
-    {'rafamadriz/friendly-snippets'}, -- Optional
-  }
-}
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v3.x',
+		lazy = true,
+		config = false
+	}
+	use {
+		'neovim/nvim-lspconfig',
+		requires = {
+			'hrsh7th/cmp-nvim-lsp'
+		}
+	}
+	use {
+		'hrsh7th/nvim-cmp',
+		requires = {
+			'L3MON4D3/LuaSnip'
+		}
+	}
 
 	-- themes
 	use { 'morhetz/gruvbox' }
