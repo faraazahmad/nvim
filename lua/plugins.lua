@@ -96,7 +96,7 @@ return require('packer').startup(function(use)
 
 	-- themes
 	use { 'morhetz/gruvbox' }
-	use { 'sainnhe/everforest' }
+	use { 'rebelot/kanagawa.nvim' }
 	use { 'vv9k/bogster' }
 
 	if packer_bootstrap then
