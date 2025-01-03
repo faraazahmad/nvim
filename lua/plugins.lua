@@ -54,8 +54,6 @@ return require('packer').startup(function(use)
 	}
 
 	-- Git stuff
-	-- Fugitive
-	use { 'tpope/vim-fugitive' }
 	-- Lazygit
 	use { 'kdheepak/lazygit.nvim' }
 	-- Git blame on the current line
@@ -95,9 +93,16 @@ return require('packer').startup(function(use)
 	}
 
 	-- themes
-	use { 'morhetz/gruvbox' }
+    use { "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" }
+    use { 'morhetz/gruvbox' }
 	use { 'rebelot/kanagawa.nvim' }
-	use { 'vv9k/bogster' }
+
+    -- LLM
+    use {
+        'sourcegraph/sg.nvim',
+        run = 'nvim -l build/init.lua',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
 
 	if packer_bootstrap then
 		require('packer').sync()

@@ -21,3 +21,8 @@ map("n", "<leader>f", ":Telescope live_grep<CR>")
 map("n", "<leader>h", ":Telescope help_tags<CR>")
 
 map("n", "<leader>g", ":LazyGit<CR>")
+
+-- " Example mapping for doing searches from within neovim (may change) using telescope.
+-- " (requires telescope.nvim to be installed)
+-- nnoremap <space>ss <cmd>lua require('sg.extensions.telescope').fuzzy_search_results()<CR>
+-- map("n", "<leader>fs", "lua require('sg.extensions.telescope').fuzzy_search_results()<CR>")
